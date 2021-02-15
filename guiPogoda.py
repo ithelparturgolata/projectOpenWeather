@@ -95,6 +95,5 @@ class Weather():
 
         self.root.mainloop()
 
-        #pass
 if __name__ == '__main__':
     Weather()
