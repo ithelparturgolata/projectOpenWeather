@@ -26,7 +26,6 @@ class Weather():
         JSON
         pobiera pogodę, temperaturę, wilgotność, ciśnienie
         angielskie nazewnictwo wynika z dokumentacji
-        :return:
         """
         self.url = "http://api.openweathermap.org/data/2.5/weather?q="
         self.cityname = self.loc.get(1.0, END)
