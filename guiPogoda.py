@@ -1,3 +1,10 @@
+"""guiPogoda.py: Opis modułu
+__name__ = "guiPOgoda"
+__author__ = "Artur Gołata"
+__license__ = "MIT"
+__version__ = "1.0"
+__status__ = "production"
+"""
 from tkinter import *
 import tkinter as tk
 from datetime import datetime
@@ -5,9 +12,22 @@ import requests
 from tkinter import messagebox
 
 class Weather():
+    """
+    Klasa Weather, prosta aplikacja do sprawdzania pogody
+    zawiera dwie metody:
+    report - pobieranie danych
+    clear - czyszczenie pola szukaj
+    """
 
     def report(self):
-
+        """
+        Metoda pobierania danych ze strony OpenWeather
+        Własne API
+        JSON
+        pobiera pogodę, temperaturę, wilgotność, ciśnienie
+        angielskie nazewnictwo wynika z dokumentacji
+        :return:
+        """
         self.url = "http://api.openweathermap.org/data/2.5/weather?q="
         self.cityname = self.loc.get(1.0, END)
         self.api_key = "2213901a0c8514848e49f8c2433e97c9"
@@ -28,9 +48,15 @@ class Weather():
             self.pressure["font"] = ("verdana", 10, "bold")
 
     def clear(self):
+        """
+        metoda czyszczenia
+        """
         self.loc.delete("1.0", END)
 
     def __init__(self):
+        """
+        Kontstruktor oraz budowa GUI
+        """
         self.root = tk.Tk()
         self.root.geometry("550x400")
         self.root.title("Pogoda")
